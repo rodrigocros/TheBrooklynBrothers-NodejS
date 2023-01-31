@@ -1,0 +1,420 @@
+@use 'variables'
+@use 'mixins'
+    
+@font-face 
+    font-family: 'trebuc'
+    src: url('/fonts/trebuc.ttf') format('truetype')
+    font-weight: normal
+    font-style: normal  
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+    font-family: 'trebuc', sans-serif
+    outline: none
+    border: none
+    text-decoration: none
+    transition: .3s linear 
+
+html
+    // font-size: 62.5%
+    overflow-x: hidden
+    scroll-behavior: smooth
+    scroll-padding: 5rem
+    & ::-webkit-scrollbar
+        width: 1rem
+    & ::-webkit-scrollbar-track
+        background-color: variables.$white-color
+    & ::-webkit-scrollbar-thumb
+        background-color: variables.$dark-gray-color
+
+header
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    z-index: 10000
+    .logo
+        background-color: variables.$white-color
+        img
+            width: 195px
+            height: 79px
+    .toggler-position
+        position: absolute
+        top: -60px
+        left: 20px
+    .navdisplay
+        display: flex
+        justify-content: center
+        background-color: variables.$blue-color
+        a
+            color: variables.$white-color
+    .bg-brown
+        background-color: variables.$dark-gray-color
+    .icon 
+        bottom: 60px
+        position: relative
+        font-size: 2.5rem
+        margin-left: 2rem
+        cursor: pointer
+        color: variables.$dark-gray-color
+        &:hover
+            color: variables.$blue-color
+    .search-icon
+        font-size: 20px
+        position: fixed
+        top: 30px
+        left: 1000px
+        color: variables.$dark-gray-color
+        @include mixins.mobile
+            font-size: 30px
+            top: 20px
+            left: 310px
+            right: 0
+            bottom: 0px
+
+
+    
+.firstmain
+    margin-top: 100px
+    &-img
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            @include mixins.mobile
+                display: none
+        &-mobile
+            display: none
+            @include mixins.mobile
+                display: inline-block
+                img
+                    width: 100%
+                    height: 100%
+                    object-fit: cover    
+    &-text
+        font-size: 2.5rem
+        font-weight: 300
+        margin-bottom: 1rem
+        text-align: center
+        &-title
+            font-size: 39px
+            font-weight: 500
+            color: variables.$blue-color
+            padding: 50px
+            @include mixins.mobile
+                font-size: 30px
+        &-content
+            font-size: 20px
+            padding-bottom: 20px
+            padding-left: 20px
+            padding-right: 20px
+            margin-left: 400px
+            margin-right: 400px
+            color: variables.$dark-gray-color
+            @include mixins.mobile
+                margin-left: 0
+                margin-right: 0
+                font-size: 14px
+    &-icons
+        width: 1132px
+        height: 259px
+        margin-left: 100px
+        @include mixins.mobile
+            margin-left: 30px
+            width: 100%
+            height: 100%
+            margin-left: 0px
+               
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+.secondmain
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    height: 160vh
+    @include mixins.mobile
+        height: 140vh
+    .title
+        h2
+            font-size: 39px
+            font-weight: 500
+            color: variables.$blue-color
+            padding: 50px
+            margin-left: 320px
+            margin-right: 320px
+            text-align: center
+            @include mixins.mobile
+                margin-left: 0
+                margin-right: 0
+                font-size: 24px
+    .text
+        font-size: 20px
+        padding-bottom: 50px
+        padding-left: 20px
+        padding-right: 20px
+        margin-left: 300px
+        margin-right: 300px
+        text-align: center
+        color: variables.$dark-gray-color
+        @include mixins.mobile
+            margin-left: 0
+            margin-right: 0
+            font-size: 14px
+    .products
+        h2
+            font-size: 39px
+            font-weight: 500
+            color: variables.$blue-color
+            margin-bottom: 50px
+            margin-left: 320px
+            margin-right: 320px
+            text-align: center
+            @include mixins.mobile
+                margin-left: 0
+                margin-right: 0  
+                font-size: 20px
+    .cards-mobile
+        display: none
+        @include mixins.mobile
+            display: inline-block
+            .card
+                width: 250px
+                height: 380px
+                box-shadow: 0px 0px 10px #ccc
+                border-radius: 16px
+                overflow: hidden
+                border: solid 1px #ccc
+                @include mixins.mobile
+                    height: 350px
+                img
+                    width: 100%
+                    height: 230px
+                .card-description 
+                    padding: 20px
+                    text-align: center
+                    p 
+                        font-size: 15px
+                        line-height: 1.5
+                        color: #333
+                        font-weight: bold
+                        @include mixins.mobile
+                            font-size: 10px
+                .card-footer
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    padding: 20px
+                    border-top: solid 2px #ccc
+                    h3
+                        font-size: 15px
+                        color: variables.$white-color
+                        font-weight: bold
+                        margin-bottom: 10px
+                .red
+                    background-color: variables.$red-color
+                .blue
+                    background-color: variables.$blue-color
+                .green
+                    background-color: variables.$green-color
+    .cards
+        margin-top: 20px
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 30px
+        height: 50vh
+        @include mixins.mobile
+            display: none
+        .card
+            width: 250px
+            height: 380px
+            box-shadow: 0px 0px 10px #ccc
+            border-radius: 16px
+            overflow: hidden
+            border: solid 1px #ccc
+            @include mixins.mobile
+                height: 350px
+            img
+                width: 100%
+                height: 230px
+            .card-description 
+                padding: 20px
+                text-align: center
+                p 
+                    font-size: 15px
+                    line-height: 1.5
+                    color: #333
+                    font-weight: bold
+                    @include mixins.mobile
+                        font-size: 10px
+            .card-footer
+                display: flex
+                justify-content: center
+                align-items: center
+                padding: 20px
+                border-top: solid 2px #ccc
+                h3
+                    font-size: 15px
+                    color: variables.$white-color
+                    font-weight: bold
+                    margin-bottom: 10px
+            .red
+                background-color: variables.$red-color
+            .blue
+                background-color: variables.$blue-color
+            .green
+                background-color: variables.$green-color
+.thirdmain
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    height: 160vh
+    @include mixins.mobile
+            height: 180vh
+    .imagem
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            @include mixins.mobile
+                display: none
+    .mobile
+        display: none
+        @include mixins.mobile
+            display: inline-block
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover
+    .title
+        h2
+            font-size: 39px
+            font-weight: 500
+            color: variables.$blue-color
+            padding: 50px
+            text-align: center
+            @include mixins.mobile
+                margin-left: 0
+                margin-right: 0
+                font-size: 24px
+    .cards-mobile
+        display: none
+        @include mixins.mobile
+            display: inline-block
+            margin-bottom: 40px
+        .card
+            width: 250px
+            height: 250px
+            box-shadow: 0px 0px 10px #ccc
+            border-radius: 16px
+            overflow: hidden
+            border: solid 1px #ccc
+            img
+                width: 100%
+                height: 150px
+            &-title
+                color: variables.$dark-gray-color
+                padding: 20px
+                font-size: 15px
+                text-align: center
+    .cards
+        display: flex
+        justify-content: center
+        align-items: center
+        height: 340px
+        gap: 20px
+        @include mixins.mobile
+            display: none
+        .card
+            width: 250px
+            height: 250px
+            box-shadow: 0px 0px 10px #ccc
+            border-radius: 16px
+            overflow: hidden
+            border: solid 1px #ccc
+            img
+                width: 100%
+                height: 150px
+            &-title
+                color: variables.$dark-gray-color
+                padding: 20px
+                font-size: 15px
+                text-align: center
+    .see-more
+        background-color: variables.$blue-color
+        padding: 10px
+        padding-left: 50px
+        padding-right: 50px
+        border-radius: 16px
+        text-align: center
+        a
+            color: variables.$white-color
+            font-weight: bold
+            font-size: 16px
+.footer
+    display: flex
+    justify-content: center
+    align-items: center
+    height: 20vh
+    background-color: variables.$blue-color
+    @include mixins.mobile
+        justify-content: start
+        flex-direction: column
+        text-align: center
+        height: 150vh
+    .footer-logo
+        position: relative
+        top: 20px
+        @include mixins.mobile
+            display: none
+    .content
+        display: flex
+        justify-content: center
+        padding: 20px
+        position: relative
+        bottom: 20px
+        @include mixins.mobile
+            flex-direction: column
+            margin-top: 20px
+        span
+            color: variables.$white-color
+            margin: 10px
+            font-size: 20px
+            @include mixins.mobile
+                transform: rotate(90deg)
+        p
+            margin: 10px
+            color: variables.$white-color
+            a
+                color: variables.$white-color
+                font-size: 14px
+                text-align: center
+    .social-media
+        position: relative
+        color: variables.$white-color
+        top: 20px
+        font-size: 30px
+    .footer-logo-mobile
+        position: none
+        display: none
+        @include mixins.mobile
+            position: relative
+            display: inline-block
+            bottom: -100px
+
+                
+
+      
+            
+
+
+
+
+
+ 
