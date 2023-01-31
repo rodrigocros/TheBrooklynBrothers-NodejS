@@ -17,3 +17,7 @@ npm install
 
 Inicie o servidor:
 nodemon app.js
+
+Acesse:
+
+http://localhost:5000/
