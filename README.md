@@ -13,10 +13,10 @@ Clone este repositório para sua máquina local:
 git clone https://github.com/[seu-username]/front-end-nodejs-handlebars.git
 
 Instale as dependências usando o gerenciador de pacotes NPM:
-npm install
+npm install express e express-handlebars
 
 Inicie o servidor:
-nodemon app.js
+nodemon dev
 
 Acesse:
 
